@@ -10,6 +10,7 @@ if(isset($_POST['simpan'])){
     $kdplg = sanitasi_input($_POST['kdplg']);
     $nama = sanitasi_input($_POST['nama']);
     $telp = sanitasi_input($_POST['telp']);
+    $email = sanitasi_input($_POST['email']);
     $alamat = sanitasi_input($_POST['alamat']);
     $created_at = waktusekarang();
     $created_by = $_SESSION['username'];
@@ -21,7 +22,7 @@ if(isset($_POST['simpan'])){
       $error = "kode pelanggan sudah pernah diinput ke database";
     }else{
       //siapkan kueri insert
-      $sql2 = "insert into pelanggan(kdplg,nama,telp,alamat,created_at,created_by) VALUES('$kdplg','$nama','$telp','$alamat','created_at','$created_by')";
+      $sql2 = "insert into pelanggan(kdplg,nama,telp,alamat,created_at,created_by,email) VALUES('$kdplg','$nama','$telp','$alamat','created_at','$created_by', '$email')";
       $result2 = mysqli_query($koneksi,$sql2);
       if($result2){
         $success = "Data Berhasil Disimpan ke Database";
@@ -78,6 +79,10 @@ if(isset($_POST['simpan'])){
                     <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap" required>
                   </div>
                   <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
                     <label for="tgllahir">Telp</label>
                     <input type="text" name="telp" class="form-control" id="telp" required>
                   </div>
@@ -125,6 +130,9 @@ include "../../template/footer.php";
       telp: {
         required: true
       },
+      email: {
+        required: true
+      },
       alamat: {
         required: true
       },
@@ -140,6 +148,9 @@ include "../../template/footer.php";
         maxlength: "Maksimal 100 karakter"
       },
       telp: {
+        required : "Harus Diisi"
+      },
+      email: {
         required : "Harus Diisi"
       },
       alamat: {

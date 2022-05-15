@@ -9,6 +9,7 @@ if(isset($_POST['simpan'])){
     $nama = sanitasi_input($_POST['nama']);
     $telp = sanitasi_input($_POST['telp']);
     $alamat = sanitasi_input($_POST['alamat']);
+    $email = sanitasi_input($_POST['email']);
     $updated_at = waktusekarang();
     $updated_by = $_SESSION['username'];
     //cek udah ada kdplg yg sama?
@@ -19,7 +20,7 @@ if(isset($_POST['simpan'])){
       $error = "Kode Pelanggan Tidak Ditemukan";
     }else{
       //siapkan kueri insert
-      $sql2 = "update pelanggan set nama='$nama', telp='$telp', alamat='$alamat',   updated_at='$updated_at', updated_by='$updated_by' where kdplg='$kdplg'";
+      $sql2 = "update pelanggan set nama='$nama', telp='$telp', alamat='$alamat',   updated_at='$updated_at', updated_by='$updated_by', email='$email' where kdplg='$kdplg'";
 
       $result2 = mysqli_query($koneksi,$sql2);
       if($result2){
@@ -96,7 +97,10 @@ include "../../template/sidebar.php";
                     <label for="nama">Nama</label>
                     <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap" required value="<?php echo $data['nama'];?>" >
                   </div>
-                  
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="Email" required value="<?php echo $data['email'];?>" >
+                  </div>
                   <div class="form-group">
                     <label for="tgllahir">Telp</label>
                     <input type="text" name="telp" class="form-control" id="telp" required value="<?php echo $data['telp'];?>" >
@@ -146,6 +150,9 @@ include "../../template/footer.php";
       telp: {
         required: true
       },
+      email: {
+        required: true
+      },
       alamat: {
         required: true
       },
@@ -161,6 +168,9 @@ include "../../template/footer.php";
         maxlength: "Maksimal 100 karakter"
       },
       telp: {
+        required : "Harus Diisi"
+      },
+      email: {
         required : "Harus Diisi"
       },
       alamat: {

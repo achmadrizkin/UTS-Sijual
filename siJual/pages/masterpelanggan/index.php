@@ -41,6 +41,7 @@ include "../../template/sidebar.php";
                           <th>Nama</th>
                           <th>Telp</th>
                           <th>Alamat</th>
+                          <th>Email</th>
                           <th>Action</th>
                         </tr>
                     </thead>
@@ -56,6 +57,7 @@ include "../../template/sidebar.php";
                           <td><?php echo $row['nama'];?></td>
                           <td><?php echo $row['telp'];?></td>
                           <td><?php echo $row['alamat'];?></td>
+                          <td><?php echo $row['email'];?></td>
                           <td><a title="edit" href="<?php echo BASE_URL;?>pages/masterpelanggan/edit.php?id=<?php echo $row['kdplg'];?>" class="btn btn-warning text-white align-right"><i class="fa fa-edit"></i></a> 
                           &nbsp;
                           <a title="hapus" href="<?php echo BASE_URL;?>pages/masterpelanggan/hapus.php?id=<?php echo $row['kdplg'];?>" class="btn btn-danger text-white show_confirm align-right"><i class="fa fa-trash"></i></a>
@@ -71,6 +73,7 @@ include "../../template/sidebar.php";
                           <th>Nama</th>
                           <th>Telp</th>
                           <th>Alamat</th>
+                          <th>Email</th>
                           <th>Action</th>
                         </tr>
                     </tfoot>
