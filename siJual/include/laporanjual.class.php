@@ -22,5 +22,29 @@ class Laporanjual
 		}
 		return $x;
 	}
+
+	public function getDataTransaksi() {
+		$this->sql = "SELECT transjual.tgl, transjual.total, transjual.kdplg, pelanggan.nama, transjual.idjual FROM transjual INNER JOIN pelanggan ON transjual.kdplg = pelanggan.kdplg ORDER BY transjual.total desc";
+		//die($this->sql);
+		$kueri = mysqli_query($this->koneksi,$this->sql);
+		$x = array();
+		while($data = mysqli_fetch_array($kueri)){
+			//$x[] = array('tgl'=>$data['tgl'],'total'=>$data['total'],'nama'=>$data['nama']);
+			$x[] = $data;
+		}
+		return $x;
+	}
+
+	public function getDataDetilTransaksi($idjual) {
+		$this->sql = "SELECT transjual.tgl, transjual.kdplg, detiljual.idjual, barang.nama, detiljual.qty, detiljual.hargajual FROM transjual INNER JOIN detiljual ON transjual.idjual = detiljual.idjual INNER JOIN barang ON detiljual.idbarang = barang.idbarang WHERE detiljual.idjual='$idjual'";
+		//die($this->sql);
+		$kueri = mysqli_query($this->koneksi,$this->sql);
+		$x = array();
+		while($data = mysqli_fetch_array($kueri)){
+			//$x[] = array('tgl'=>$data['tgl'],'total'=>$data['total'],'nama'=>$data['nama']);
+			$x[] = $data;
+		}
+		return $x;
+	}
 }
 ?>

@@ -139,20 +139,20 @@ if(isset($_POST['tblsimpan'])){
 		</tr>
 		</thead>
 		<tbody>
-		<?php
-	 foreach($listbarang as $databarang):
-		?>
-		<tr>
-		<td><?php echo $databarang['idbarang'];?></td>
-		<td><?php echo $databarang['nama'];?></td>
-		<td class='text-right'><?php echo $databarang['harga'];?></td>
-		<td class='text-right'><?php echo $databarang['stok'];?></td>
-		<td align='right'><input type='number' width='3' id="qty_<?php echo $databarang['idbarang']?>" max='<?php echo $databarang['stok'];?>' min='0' class='qtypop'></td>
-		<td><input type='button' class='btn btn-primary btn-xs' value='Pilih' onclick="inputbarang('<?php echo $databarang['idbarang']?>','<?php echo $databarang['stok']?>')"></td>
-		</tr>
-		<?php
-		endforeach;
-		?>
+      <?php
+    foreach($listbarang as $databarang):
+      ?>
+      <tr>
+      <td><?php echo $databarang['idbarang'];?></td>
+      <td><?php echo $databarang['nama'];?></td>
+      <td class='text-right'><?php echo $databarang['harga'];?></td>
+      <td class='text-right'><?php echo $databarang['stok'];?></td>
+      <td align='right'><input type='number' width='3' id="qty_<?php echo $databarang['idbarang']?>" max='<?php echo $databarang['stok'];?>' min='0' class='qtypop'></td>
+      <td><input type='button' class='btn btn-primary btn-xs' value='Pilih' onclick="inputbarang('<?php echo $databarang['idbarang']?>','<?php echo $databarang['stok']?>')"></td>
+      </tr>
+      <?php
+      endforeach;
+      ?>
 		</tbody>
 		</table>
       </div>

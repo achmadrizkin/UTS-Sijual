@@ -63,6 +63,10 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Penjualan</p>
                 </a>
+                <a href="<?php echo BASE_URL;?>pages/transaksiDataTransaksi/index.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Transaksi</p>
+                </a>
               </li>
             </ul>
           </li>

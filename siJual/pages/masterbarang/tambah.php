@@ -32,6 +32,18 @@ if(isset($_POST['simpan'])){
       }
     }
 }
+
+function generateRandomString($length = 10) {
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $charactersLength = strlen($characters);
+  $randomString = '';
+  for ($i = 0; $i < $length; $i++) {
+      $randomString .= $characters[rand(0, $charactersLength - 1)];
+  }
+  return $randomString;
+}
+
+
 ?>
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -73,7 +85,7 @@ if(isset($_POST['simpan'])){
                 <div class="card-body">
                   <div class="form-group">
                     <label for="idbarang">Kode Barang</label>
-                    <input type="text" name="idbarang" class="form-control" id="idbarang" placeholder="Kode Barang" required>
+                    <input type="text" name="idbarang" class="form-control" id="idbarang" placeholder="Kode Barang" readonly value="<?php echo generateRandomString();?>">
                   </div>
                   <div class="form-group">
                     <label for="nama">Nama</label>
