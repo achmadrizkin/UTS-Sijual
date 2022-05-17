@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo BASE_URL;?>dashboard.php" class="brand-link">
       <img src="<?php echo IMG_URL;?>AdminLTELogo.png" alt="Siraport Logo" class="brand-image img-circle elevation-3" style="opacity: .8">

@@ -80,12 +80,6 @@ if($i == 1){
 <div class="row">
   <div class="col-lg-12">
 	<div class="box">
-	  <header>
-		<div class="icons">
-		  <i class="fa fa-table"></i>
-		</div>
-		<h5>Data Laporan Data Transaksi</h5>
-	  </header>
 	  <div id="collapse4" class="body">
 	  <div class='table-responsive'>
 		<table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
@@ -144,5 +138,3 @@ function cekdata(){
 	}
 }
 </script>
-  
-

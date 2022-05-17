@@ -11,7 +11,6 @@ class Penjualan
 		$this->koneksi = mysqli_connect($_ENV['dbhost'],$_ENV['dbuser'],$_ENV['dbpass'],$_ENV['dbname']);
 	}
 
-	
 	public function simpan($tgl,$kdplg,$kdbrg,$qty,$harga){
 //	print_r($qty);
 	//cari idjual terakhir + 1;
